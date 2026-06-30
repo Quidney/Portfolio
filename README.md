@@ -10,8 +10,9 @@ Most notably, I implemented a Physically Based Rendering (PBR) lighting model, t
 ## Garden Of Life
 
 Garden of life is a 3D puzzle game we made with a group of 6 in Stichting Gamelab Oost for an internship in MBO4. <br>
-I worked with a group of CMGT Saxion Students to develop a game that will aid lymphoma cancer research. 
+I worked with a group of CMGT Saxion Students to develop a game that will aid lymphoma cancer research. <br>
 
+We used Unity for the game, and it is available to play on the web. <br>
 You can try it [here.](https://narniezog.itch.io/garden-of-life)
 
 <img width="550" height="315" alt="image3" src="https://github.com/user-attachments/assets/0d049353-8d1d-484e-b3f1-dcf4cd5ce5d2" />
