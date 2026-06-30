@@ -1,4 +1,4 @@
-## Console Renderer (PBR)
+## [Console Renderer (PBR)](github.com/Quidney/ConsoleRenderer)
 
 ConsoleRenderer is a custom 3D graphics engine I developed in C# that renders scenes directly into a console. I engineered the project from the ground up as a software rasterizer. <br>
 The engine manually calculates 3D geometry and projects it into a grid of colored block characters using ANSI escape codes, turning the command prompt into a display screen with RGB32 color capabilities. <br>
@@ -20,7 +20,7 @@ You can try it [here.](https://narniezog.itch.io/garden-of-life)
 <img width="600" height="800" alt="20250520_161819" src="https://github.com/user-attachments/assets/e4eb72c3-7169-412f-96c3-90eb64c09408" />
 
 
-## Minecraft Clone (Without Textures)
+## [Minecraft Clone (Without Textures)](https://github.com/Quidney/Minecraft)
 
 Minecraft Clone is my custom built voxel sandbox engine, written from scratch in C# and OpenTK. <br> 
 Chunks are generated async in the background and uploaded on the main thread. <br> 
@@ -31,10 +31,11 @@ I started this project thinkiing I will use the newest OpenGL features and make 
 
 
 
-## 2D RPG Game (Survival)
+## [2D RPG Game (Survival)](https://github.com/Quidney/2DRpgGame)
 
 2D RPG Game I made when I didn't have internet at home. I had to reinvent the Math function Atan2 without any external source. <br>
-All textures (except for the player) are homemade. For the player, I opened up a game and copied the pixel art of the character. 
+All textures (except for the player) are homemade. For the player, I opened up a game and copied the pixel art of the character. <br>
+This was my first 'big' project
 
 <img width="428" height="432" alt="ezgif-2f9df2c53e9de2f2" src="https://github.com/user-attachments/assets/62a31b5b-d99d-4486-8269-18b3c17724d3" />
 
