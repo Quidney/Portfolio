@@ -25,7 +25,41 @@ You can try it [here.](https://narniezog.itch.io/garden-of-life)
 Minecraft Clone is my custom built voxel sandbox engine, written from scratch in C# and OpenTK. <br> 
 Chunks are generated async in the background and uploaded on the main thread. <br> 
 It uses Multi Draw Indirect so that I can batch what to draw and then send to the GPU at once. <br> 
-I started this project thinkiing I will use the newest OpenGL features and make something optimized. It runs 200 FPS on my laptop with an integrated GPU, so for now, great success.
+I started this project thinkiing I will use the newest OpenGL features and make something optimized. It runs 200 FPS on my laptop with an integrated GPU, so for now, great success. <br>
+
+I am proud of the way I managed to pack all my data into 4 bytes.
+
+```csharp
+ [StructLayout(LayoutKind.Sequential)]
+ public readonly struct Vertex
+ {
+     /// <summary>
+     /// 
+     ///          -- 32 BITS --
+     ///    x    y    z  nor  tex  pad
+     /// [006][006][006][003][011][000] STRIDE
+     /// [026][020][014][011][000][000] OFFSET
+     /// 
+     /// </summary>
+     public readonly uint Data;
+
+     private Vertex(uint data) => Data = data;
+
+     public static Vertex Create(int x, int y, int z, NormalIndex normal, int textureIndex)
+     {
+         Debug.Assert(((x | y | z) & ~63) == 0, "X, Y, or Z of Vertex exceeded 6 bits [0,64)!");
+         Debug.Assert((textureIndex & ~2047) == 0, "Maximum Texture Index of Vertex exceeded 11 bits [0, 2048)!");
+
+         return new Vertex(
+             (((uint)x & 0x3F) << 26) |
+             (((uint)y & 0x3F) << 20) |
+             (((uint)z & 0x3F) << 14) |
+             (((uint)normal & 0x7) << 11) |
+             ((uint)textureIndex & 0x7FF)
+         );
+     }
+ }
+```
 
 <img width="1280" height="720" alt="ezgif-2604977eabe6a15c" src="https://github.com/user-attachments/assets/d9ceecc4-7a57-436d-8e77-cf4c0639de67" />
 
